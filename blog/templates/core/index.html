@@ -1,0 +1,54 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}Main{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+
+<div class="container">
+    <div class="about-us">
+        <h1 class="text-white"><strong class="melt-word">Melt</strong> : Ваша команда по созданию индивидуальных ToDo-решений</h1>
+
+        <div class="description">
+            <p class="py-20">
+                Melt – это команда профессионалов, которые  превращают ваши идеи в  функциональные и удобные ToDo-сайты. Мы понимаем,
+                что организация задач – это ключевой элемент продуктивности, поэтому  подходим к разработке каждого проекта индивидуально,
+                учитывая ваши специфические потребности и цели.
+            </p>
+            <h1>
+                Что делает Melt особенным?
+            </h1>
+            <ul>
+                <li class="py-2">• Индивидуальный подход:  Мы не предлагаем готовые шаблоны.  Каждый ToDo-сайт, созданный Melt,  разрабатывается с нуля, чтобы  максимально соответствовать вашим требованиям.</li>
+                <li class="py-2">• Профессионализм:  Наша команда состоит из опытных разработчиков, дизайнеров и менеджеров проектов,  которые  гарантируют высокое качество и своевременную  реализацию.</li>
+                <li class="py-2">• Удобство использования:  Мы  делаем  ToDo-сайты  интуитивно понятными и простыми в использовании, чтобы  вы могли  легко  организовывать свои задачи и повышать свою  эффективность.</li>
+            </ul>
+
+            <h2 class="py-5">
+                Melt – это больше, чем просто разработка сайтов.  Это партнерство, которое помогает вам достичь  ваших целей.
+            </h2>
+            <div>
+                <h2 class="mt-0">
+                    Хотите  узнать больше?
+                </h2>
+                <div class="py-3">
+                    <p>Свяжитесь с нами по телефону: +7 777 777 777 7</p>
+                    <p>Посетите наш сайт: <a href="{% url 'todo:todo_view' %}">ToDo</a></p>
+                    <p>Напишите нам: <a href="https://t.me/Trustmemate" target="_blank">Создатель сайта</a></p>
+                </div>
+
+                <h1 class="py-2">Создайте ToDo-сайт, который  будет работать на вас!</h1>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+{% endblock %}

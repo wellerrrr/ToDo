@@ -1,0 +1,19 @@
+.edit-btn {
+    background-color: white;
+    transition: 1.0s;
+}
+
+.edit-btn:hover {
+    background-color: blue;
+    transition: 0.5s;
+}
+
+.delete-btn {
+    background-color: white;
+    transition: 1.0s;
+}
+
+.delete-btn:hover {
+    background-color: #c24c4c;
+    transition: 0.5s;
+}

@@ -1,0 +1,75 @@
+form {
+    text-align: center;
+}
+
+label, h1 {
+    color: white;
+}
+
+.h1-login, h1 {
+    font-size: 40px;
+}
+
+.style-button:hover {
+    color: #2d252f;
+    scale: 1.1;
+}
+
+.style-a:hover {
+    color: #2d252f;
+    scale: 1.2;
+}
+
+.style-a {
+    transition: all 0.5s;
+}
+
+.style-button {
+    transition: all 0.5s;
+}
+
+.style-a-melt:hover {
+    color: black;
+    scale: 1.1;
+    font-size: 40px;
+    transition: all 0.6s;
+
+}
+
+.style-a-melt {
+    color: white;
+    transition: all 1.0s;
+    scale: 1.8;
+}
+
+.style-a-about:hover {
+    color: black;
+    scale: 1.2;
+    transition: all 0.6s;
+}
+
+.style-a-about {
+    transition: all 1.0s;
+    scale: 1.0;
+}
+
+.form-input:hover {
+    background-color: white;
+    scale: 1.4;
+    color: black;
+    transition: all 1.0s;
+}
+
+.form-input {
+    transition: all 1.0s;
+}
+
+.signup-done:hover {
+    transition: all 0.6s;
+    color: #468786;
+}
+
+.signup-done {
+    transition: all 0.6s;
+    color: white;
+}

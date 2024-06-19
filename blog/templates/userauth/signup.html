@@ -1,0 +1,25 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Sign up{% endblock %}
+
+
+{% block content %}
+
+<form method="post">
+    <h1 class="h1-login py-4 text-white">Sign up</h1>
+    {% csrf_token %}
+
+    <div class="text-red-300 py-1">{{ form.email.errors }}</div>
+    <div style="margin-top: 20px">
+        <h2>{{ form.username }}</h2>
+        <h2 class="py-4">{{ form.email }}</h2>
+        <h2>{{ form.password }}</h2>
+        <h2 class="py-4">{{ form.password2 }}</h2>
+    </div>
+    <div class="py-4">
+        <button type="submit" class="style-button text-white rounded text-xl py-3 px-3 bg-green-400">Sign up</button>
+    </div>
+
+</form>
+
+{% endblock %}

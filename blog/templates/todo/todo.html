@@ -1,0 +1,54 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}ToDo{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/todo.css' %}">
+
+
+<form method="post">
+    {% csrf_token %}
+    <div align="center">
+        <div class="card mb-3">
+            {{ form.title }}
+        </div>
+    </div>
+
+    <div class="py-6">
+        <button style='color: #1a8047; border: solid' class="todo-add-btn rounded py-4 px-10" type="submit">Add</button>
+    </div>
+
+</form>
+
+{% for t in todo %}
+
+
+
+<div class="text-center text-black w-2/5 ml-auto mr-auto text-xl border">
+    <div class="rounded">
+        <div class="title-btn bg-green-100 text-black">
+            <p class="py-4 px-3">
+                {{ t }}
+            </p>
+        </div>
+    </div>
+    <hr class="size-2" style="color:rgb(98, 136, 168); width: auto;">
+        <div class="text-white rounded ml-auto mr-auto">
+            <a href="{% url 'todo:todo_edit' t.id %}" class="flex flex-col py-4 px-3">Edit</a>
+        </div>
+        <hr class="size-2" style="color:rgb(98, 136, 168); width: auto;">
+        
+        <div class= "text-white rounded ml-auto mr-auto">
+            <a href="{% url 'todo:todo_delete' t.id %}" class="remove-button flex flex-col rounded py-4 px-">Delete</a>
+        </div>
+
+        <hr class="size-0" style="color:rgb(98, 136, 168); width: auto;">
+</div>
+<br>
+
+
+
+{% endfor %}
+
+
+{% endblock %}

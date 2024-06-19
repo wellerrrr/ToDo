@@ -1,0 +1,10 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Sign up DONE{% endblock %}
+
+
+{% block content %}
+
+<h1 class='text-white' style="text-align: center">Congrats! You have registered</h1>
+<h2 class="text-white" style="text-align: center">Let's log in your account! - <a class="signup-done" href="{% url 'userauth:login' %}">Log in</a></h2>
+{% endblock %}

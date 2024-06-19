@@ -1,0 +1,21 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}Edit ToDo{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/todo.css' %}">
+<form method="post" class="edit-todo-form">
+    {% csrf_token %}
+    <div align="center">
+        <div class="card mb-3">
+            {{ form.title }}
+        </div>
+    </div>
+
+    <div>
+        <button style='color: #1a8047; border: solid' class="todo-add-btn rounded py-4 px-10" type="submit">confirm changes</button>
+    </div>
+
+</form>
+
+{% endblock %}

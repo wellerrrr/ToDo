@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</head>
+<body style="background-color: #131311;">
+
+<div class="container-main">
+
+    {% if user.is_authenticated %}
+    <nav class="flex py-6 px-6 justify-between text-white" style="font-size: 20px; background-color: #1a8047;">
+    {% else %}
+    <nav class="flex py-6 px-6 justify-between text-white" style="font-size: 20px; background-color: #222222;">
+        {% endif %}
+        <a href="{% url 'core:index' %}" class="style-a-melt" style="font-size: 20px">Melt</a>
+
+        <div class="flex justify-between space-x-5">
+            <a href="{% url 'todo:todo_view' %}" name="todo-button" class="style-a-about">ToDo</a>
+            {% if user.is_authenticated %}
+                {% if user.is_superuser %}
+                <a href="{% url 'core:admin' %}" class="style-a-about">Admin</a>
+                {% endif %}
+            <p>{{ user.username }}|<a href="{% url 'userauth:logout' %}" class="style-a bg-red-400 rounded py-4 px-4">Log out</a></p>
+            {% else %}
+            <div class="style-a">
+                <a href="{% url 'userauth:login' %}" class="bg-green-400 rounded py-3 px-3">Log in</a>
+            </div>
+            <div class="style-a">
+                <a href="{% url 'userauth:signup' %}" class="bg-green-400 rounded py-3 px-3">Sign up</a>
+            </div>
+            {% endif %}
+        </div>
+    </nav>
+</div>
+<div class="container">
+    <div class="py-6">
+        {% block content %}
+        {% endblock %}
+    </div>
+</div>
+
+
+
+</body>
+</html>

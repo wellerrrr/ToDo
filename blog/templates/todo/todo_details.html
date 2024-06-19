@@ -1,0 +1,24 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}ToDo Details{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href='{% static "css/todo.css" %}'>
+<div align="center">
+    <div class="text-white" style="margin: 7px; width: 700px; font-size: 1.2rem;">
+        <div class="rounded py-4 px-4" style="background-color: #1a8047;">
+            {% for t in todo %}
+                    <p>{{ t.title }}</p>
+                <div class="edit-btn rounded text-black flex flex-col" style="margin-top: 10%;">
+                    <a href="{% url 'todo:todo_edit' t.id %}" class="py-4 px-4">Edit</a>
+                </div>
+                <div class="delete-btn rounded text-black flex flex-col" style="margin-top: 1%;">
+                    <a href="{% url 'todo:todo_delete' t.id %}" class=" rounded py-4 px-4">Delete</a>
+                </div>
+            {% endfor %}
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}
